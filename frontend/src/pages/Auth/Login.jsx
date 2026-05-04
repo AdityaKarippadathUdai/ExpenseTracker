@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AuthLayout from '../../components/layouts/AuthLayout'
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { Input } from '../../components/Inputs/Input';
 
 
@@ -30,8 +30,24 @@ export const Login = () => {
         label="Email Address"
         placeholder="name@gmail.com"
         type="text"/>
+        <Input 
+        value={password}
+        onChange={({target})=>setPassword(target.value)}
+        label="Password"
+        placeholder="Min 8 character"
+        type="password"/>
 
 
+        {error && <p className=''>{error}</p>}
+        <button type='submit' className=''>
+          Login
+        </button>
+        <p className=''>
+          Dont't have an Account?{""}
+          <Link className='' to="/signup">
+          SignUp
+          </Link>
+        </p>
       </form>
       </div>
     </AuthLayout>

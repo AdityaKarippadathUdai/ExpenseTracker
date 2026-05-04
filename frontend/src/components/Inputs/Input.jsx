@@ -1,38 +1,40 @@
 import React, { useState } from 'react'
-import {FaRegEye,FagRegEyeSlash} from "react-icons/fa6";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
-export const Input = ({value,onChange,placeholder,label,type}) => {
-  const [showPassword,setShowPassword]=useState(false);
-  const toggleShowPassword=()=>{
+export const Input = ({ value, onChange, placeholder, label, type }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+
   return (
     <div>
       <label className='text-[13px] text-slate-800'>{label}</label>
+
       <div className='input-box'>
         <input 
-        type={type=='password' ? showPassword ?'text':'password':type}
-        placeholder={placeholder}
-        className='w-full bg-transparent outline-none'
-        value={value}
-        onChange={(e)=onChange(e)}
+          type={type === 'password' ? (showPassword ? 'text' : 'password') : type}
+          placeholder={placeholder}
+          className='w-full bg-transparent outline-none'
+          value={value}
+          onChange={(e) => onChange(e)}
         />
 
-        {type==="password" &&(
-          <>
-          {showPassword ?(
+        {type === "password" && (
+          showPassword ? (
             <FaRegEye
-            size={22}
-            className='text-primary cursor-pointer'
-            onClick={()=>toggleShowPassword()} />
-          ):(
-            <FagRegEyeSlash
-            size={2}
-            className='text-slate-400 cursor-pointer'
-            onClick={()=>toggleShowPassword()}/>
+              size={22}
+              className='text-primary cursor-pointer'
+              onClick={toggleShowPassword}
+            />
+          ) : (
+            <FaRegEyeSlash
+              size={22}
+              className='text-slate-400 cursor-pointer'
+              onClick={toggleShowPassword}
+            />
           )
-          }
-          </>
         )}
       </div>
     </div>
