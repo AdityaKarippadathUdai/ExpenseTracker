@@ -50,13 +50,13 @@ export const Login = () => {
         type="password"/>
 
 
-        {error && <p className=''>{error}</p>}
+        {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
         <button type='submit' className='w-full bg-blue-600 text-white py-3 rounded-lg mt-4 hover:bg-blue-700 transition'>
           Login
         </button>
-        <p className=''>
+        <p className='text-[-13px] text-slate-800 mt-3'>
           Dont't have an Account?{""}
-          <Link className='' to="/signup">
+          <Link className='font--medium text-primary underline' to="/signup">
           SignUp
           </Link>
         </p>

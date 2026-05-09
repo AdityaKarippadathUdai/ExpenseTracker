@@ -3,6 +3,7 @@ import AuthLayout from '../../components/layouts/AuthLayout'
 import {Link, useNavigate} from 'react-router-dom';
 import { Input } from '../../components/Inputs/Input';
 import { validateEmail } from '../../utils/helper';
+import { ProfilePhotoSelector } from '../../components/Inputs/ProfilePhotoSelector';
 
 export const SignUp = () => {
   const [profilePic,setProfilePic]=useState(null);
