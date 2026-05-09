@@ -49,6 +49,16 @@ export const SignUp = () => {
           type="password"/>
           </div>
           </div>
+                  {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
+                  <button type='submit' className='w-full bg-blue-600 text-white py-3 rounded-lg mt-4 hover:bg-blue-700 transition'>
+                    SignUp
+                  </button>
+                  <p className='text-[-13px] text-slate-800 mt-3'>
+                    Have an acoount {""}
+                    <Link className='font--medium text-primary underline' to="/login">
+                    Login
+                    </Link>
+                  </p>
         </form>
       </div>
     </AuthLayout>
