@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AuthLayout from '../../components/layouts/AuthLayout'
 import {Link, useNavigate} from 'react-router-dom';
 import { Input } from '../../components/Inputs/Input';
-
+import { validateEmail } from '../../utils/helper';
 
 export const Login = () => {
   const [email,setEmail]=useState("");
@@ -12,6 +12,18 @@ export const Login = () => {
   const navigate=useNavigate();
 
   const handleLogin=async (e)=>{
+    e.preventDefault();
+
+    if(!validateEmail(email)){
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    if(!password){
+      setError("Enter passsword");
+      return;
+    }
+    setError("");
 
   }
 
@@ -39,7 +51,7 @@ export const Login = () => {
 
 
         {error && <p className=''>{error}</p>}
-        <button type='submit' className=''>
+        <button type='submit' className='w-full bg-blue-600 text-white py-3 rounded-lg mt-4 hover:bg-blue-700 transition'>
           Login
         </button>
         <p className=''>
