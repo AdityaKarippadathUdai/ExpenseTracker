@@ -6,6 +6,8 @@ const { connect } = require("http2");
 
 const app = express();
 const connectDB = require("./config/db");
+const auhtRoutes = require("./routes/authRoutes");
+
 
 
 // Middleware
@@ -22,6 +24,7 @@ app.use(
 app.use(express.json());
 
 connectDB();
+app.use("/api/v1/auth",auhtRoutes);
 
 
 const PORT = process.env.PORT || 5000;
