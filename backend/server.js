@@ -7,7 +7,7 @@ const { connect } = require("http2");
 const app = express();
 const connectDB = require("./config/db");
 const auhtRoutes = require("./routes/authRoutes");
-
+const incomeRoutes = require("./routes/incomeRoutes");
 
 
 // Middleware
@@ -25,6 +25,8 @@ app.use(express.json());
 
 connectDB();
 app.use("/api/v1/auth",auhtRoutes);
+app.use("/api/v1/income",incomeRoutes);
+
 
 // Serve uploads folder statically
 app.use("/uploads",express.static(path.join(__dirname,"uploads")));
