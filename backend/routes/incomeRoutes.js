@@ -11,9 +11,9 @@ const { protect } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-router.post("/",protect,addIncome);
-router.get("/",protect,getAllIncome);
+router.post("/add",protect,addIncome);
+router.get("/get",protect,getAllIncome);
 router.delete("/:id",protect,deleteIncome);
-router.get("/download/excel",protect,downloadIncomeExcel);
+router.get("/downloadexcel",protect,downloadIncomeExcel);
 
 module.exports = router;
