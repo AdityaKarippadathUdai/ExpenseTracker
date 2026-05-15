@@ -8,7 +8,7 @@ const generateToken = (id)=>{
 }
 
 //Register User
-exports.registerUser=async(req,res)=>{
+exports.registerUser=async (req,res)=>{
     const {fullName,email,password,profileImageUrl}=req.body;
     // Check for missing fields
     if(!fullName || !email || !password){
