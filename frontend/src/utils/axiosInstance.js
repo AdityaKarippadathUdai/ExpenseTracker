@@ -11,3 +11,15 @@ const axiosInstance = axios.create({
 });
 
 // Request interceptor to add auth token
+axiosInstance.interceptors.request.use(
+    (config) => {
+        const accesstoken = localStorage.getItem("token");
+        if (accesstoken) {
+            config.headers.Authorization = `Bearer ${accesstoken}`;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
