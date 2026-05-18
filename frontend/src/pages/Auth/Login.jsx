@@ -3,8 +3,9 @@ import AuthLayout from '../../components/layouts/AuthLayout'
 import {Link, useNavigate} from 'react-router-dom';
 import { Input } from '../../components/Inputs/Input';
 import { validateEmail } from '../../utils/helper';
-import { API_PATHS } from '../../services/apiPaths';
-import { axiosInstance } from '../../services/axiosInstance';
+import { API_PATHS } from '../../utils/apiPaths';
+import axiosInstance from '../../utils/axiosInstance';
+
 
 export const Login = () => {
   const [email,setEmail]=useState("");
