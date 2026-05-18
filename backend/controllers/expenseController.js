@@ -46,7 +46,7 @@ exports.addExpense = async (req, res) => {
 };
 
 // Get All Expenses
-exports.getAllExpenses = async (req, res) => {
+exports.getAllExpense = async (req, res) => {
 
     const userId = req.user.id;
     
