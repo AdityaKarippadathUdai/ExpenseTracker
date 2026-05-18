@@ -4,8 +4,8 @@ export const BASE_URL="http://localhost:8000";
 // API Endpoints
 export const API_PATHS={
     AUTH:{
-        LOGIN:"/api/auth/login",
-        REGISTER:"/api/auth/register",
+        LOGIN:"/api/v1/auth/login",
+        REGISTER:"/api/v1/auth/register",
         GET_USER_INFO:"/api/v1/auth/getUser",
     },
     DASHBOARD:{
