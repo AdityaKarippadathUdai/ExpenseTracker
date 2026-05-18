@@ -9,6 +9,8 @@ const connectDB = require("./config/db");
 const auhtRoutes = require("./routes/authRoutes");
 const incomeRoutes = require("./routes/incomeRoutes");
 const expenseRoutes = require("./routes/expenseRoutes");
+const { applyTimestamps } = require("./models/User");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 
 // Middleware
 app.use(
@@ -27,7 +29,7 @@ connectDB();
 app.use("/api/v1/auth",auhtRoutes);
 app.use("/api/v1/income",incomeRoutes);
 app.use("/api/v1/expense",expenseRoutes);
-
+app.use("/api/v1/dashboard",dashboardRoutes);
 // Serve uploads folder statically
 app.use("/uploads",express.static(path.join(__dirname,"uploads")));
 
