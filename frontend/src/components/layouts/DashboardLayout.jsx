@@ -1,0 +1,22 @@
+import React, { useContext } from 'react'
+import { UserContext } from '../../context/UserContext';
+
+const DashboardLayout = ({children,activeMenu}) => {
+    const user=useContext(UserContext);
+  return (
+    <div className=''>
+        <Navbar activemenu={activeMenu} />
+        {user &&(
+            <div className='flex'>
+                <div className='max-[-1080px]:hidden'>
+                    <SideMenu activemenu={activeMenu} />
+                </div>
+                <div className='grow mx-5'>
+                    {children}
+                </div>
+            </div>
+        )}
+    </div>
+  )
+}
+export default DashboardLayout;
