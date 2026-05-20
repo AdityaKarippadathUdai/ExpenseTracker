@@ -10,6 +10,7 @@ import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import { UserContext } from '../../context/userContext';
 import { useContext } from 'react';
+import uploadImage from '../../utils/uploadImage';
 
 export const SignUp = () => {
   const [profilePic, setProfilePic] = useState(null);
@@ -62,6 +63,7 @@ export const SignUp = () => {
         fullName,
         email,
         password,
+        profileImageUrl,
       });
       const{token,user}=response.data;
 
