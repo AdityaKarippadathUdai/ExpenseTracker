@@ -4,6 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '../../components/Inputs/Input';
 import { validateEmail } from '../../utils/helper';
 import { ProfilePhotoSelector } from '../../components/Inputs/ProfilePhotoSelector';
+import axios from 'axios';
+import axiosInstance from '../../utils/axiosInstance';
+import { API_PATHS } from '../../utils/apiPaths';
 
 export const SignUp = () => {
   const [profilePic, setProfilePic] = useState(null);
@@ -42,6 +45,29 @@ export const SignUp = () => {
       return;
     }
     setError("");
+
+    //signup API call
+    try{
+      const response=await axiosInstance.post(API_PATHS.AUTH.SIGNUP,{
+        fullName,
+        email,
+        password,
+      });
+      const{token,user}=response.data;
+
+      if(token){
+        localStorage.setItem("token",token);
+        updateUser(user);
+        navigate("/dashboard");
+      }
+    }catch(error){
+      if(error.response && error.response.data.message){
+        setError(error.response.data.message);
+      }else{
+        setError("An error occurred. Please try again.");
+      }
+    }
+    
   };
 
   return (
