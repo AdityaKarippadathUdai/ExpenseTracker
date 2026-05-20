@@ -52,6 +52,12 @@ export const SignUp = () => {
 
     //signup API call
     try{
+
+      //upload Image if present
+      if(profilePic){
+        const imageUploadRes=await uploadImage(profilePic);
+        profileImageUrl=imageUploadRes.imageUrl || "";
+      }
       const response=await axiosInstance.post(API_PATHS.AUTH.SIGNUP,{
         fullName,
         email,
