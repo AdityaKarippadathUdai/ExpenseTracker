@@ -59,7 +59,7 @@ export const SignUp = () => {
         const imageUploadRes=await uploadImage(profilePic);
         profileImageUrl=imageUploadRes.imageUrl || "";
       }
-      const response=await axiosInstance.post(API_PATHS.AUTH.SIGNUP,{
+      const response=await axiosInstance.post(API_PATHS.AUTH.REGISTER,{
         fullName,
         email,
         password,
