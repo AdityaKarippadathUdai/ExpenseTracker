@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { use, useState } from 'react'
 import AuthLayout from '../../components/layouts/AuthLayout'
 import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '../../components/Inputs/Input';
 import { validateEmail } from '../../utils/helper';
 import { ProfilePhotoSelector } from '../../components/Inputs/ProfilePhotoSelector';
+// eslint-disable-next-line no-unused-vars
 import axios from 'axios';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
+import { UserContext } from '../../context/userContext';
+import { useContext } from 'react';
 
 export const SignUp = () => {
   const [profilePic, setProfilePic] = useState(null);
@@ -14,6 +17,7 @@ export const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const {updateUser} = useContext(UserContext);
 
   const navigate = useNavigate();
 
