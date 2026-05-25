@@ -52,6 +52,20 @@ export const Home = () => {
           value={addThousandSeparator(dashboardData?.totalBalance || 0)}
           color="bg-primary"
           />
+
+          <InfoCard
+          icon={<LuWalletMinimal/>}
+          label="Total Income"
+          value={addThousandSeparator(dashboardData?.totalIncome || 0)}
+          color="bg-orange-500"
+          />
+
+          <InfoCard
+          icon={<LuHandCoins/>}
+          label="Total Expenses"
+          value={addThousandSeparator(dashboardData?.totalExpenses || 0)}
+          color="bg-red-500"
+          />
         </div>
       </div>
     </DashboardLayout>
