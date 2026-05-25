@@ -1,5 +1,7 @@
 import React from "react";
+import { getInitials } from "../../utils/helper";
 
+/*
 const getInitials = (name) => {
   return name
     .split(" ")
@@ -7,6 +9,7 @@ const getInitials = (name) => {
     .join("")
     .toUpperCase();
 };
+*/
 
 const CharAvatar = ({
   fullName = "",
