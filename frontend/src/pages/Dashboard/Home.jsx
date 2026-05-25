@@ -5,6 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axiosInstance  from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
+import {LuHandCoins,LuWalletMinimal} from 'react-icons/lu';
+import {IoMdCard} from 'react-icons/io';
+import { addThousandSeparator } from '../../utils/helper';
+import InfoCard from '../../components/Cards/InfoCard';
+
 
 export const Home = () => {
   useUserAuth();
@@ -39,7 +44,16 @@ export const Home = () => {
 
   return (
     <DashboardLayout activeMenu="Dashboard">
-      <div className="my-5 mx-auto ">Home</div>
+      <div className="my-5 mx-auto ">
+        <div  className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+          <InfoCard
+          icon={<IoMdCard/>}
+          label="Total Balance"
+          value={addThousandSeparator(dashboardData?.totalBalance || 0)}
+          color="bg-primary"
+          />
+        </div>
+      </div>
     </DashboardLayout>
   )
 }
