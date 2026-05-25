@@ -9,7 +9,7 @@ import {LuHandCoins,LuWalletMinimal} from 'react-icons/lu';
 import {IoMdCard} from 'react-icons/io';
 import { addThousandSeparator } from '../../utils/helper';
 import InfoCard from '../../components/Cards/InfoCard';
-
+import RecentTransactions from '../../components/Dashboard/RecentTransactions';
 
 export const Home = () => {
   useUserAuth();
@@ -66,6 +66,13 @@ export const Home = () => {
           value={addThousandSeparator(dashboardData?.totalExpenses || 0)}
           color="bg-red-500"
           />
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-6'>
+          <RecentTransactions 
+          transactions={dashboardData?.recentTransactions || []}
+          onSeeMore={()=>navigate("/expense")}
+          />
+
         </div>
       </div>
     </DashboardLayout>
