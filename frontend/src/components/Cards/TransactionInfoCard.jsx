@@ -24,6 +24,29 @@ const TransactionInfoCard = ({
                 <LuUUtensils />
             )}
         </div>
+        <div clasName=''>
+            <div>
+                <p className=''>{title}</p>
+                <p className=''>{date}</p>
+            </div>
+
+            <div className=''>
+                {!hideDeleteBtn && (
+                    <button className=''
+                    onClick={onDelete}
+                    >
+                        <LuTrash2 size={18} />
+                    </button>
+                )}
+                <div
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-md`}>
+                    <h6 className=''>
+                        {type==="income" ? "+": "-"}${amount}
+                    </h6>
+                    {type==="income"?<LuTrendingUp/>: <LuTrendingDown/>}
+                </div>
+            </div>
+        </div>
     </div>
   )
 }
