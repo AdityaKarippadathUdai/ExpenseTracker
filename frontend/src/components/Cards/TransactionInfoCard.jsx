@@ -16,10 +16,10 @@ const TransactionInfoCard = ({
     hideDeleteBtn
 }) => {
   return (
-    <div className=''>
-        <div className=''>
+    <div className='group relative flex items-center gap-4 mt-2 p-3rounded-lg hover:bg-gray-100'>
+        <div className='w-12 h-12 flex items-center justify-center text-xl text-gray-800 bg-gray-100 rounded-full'>
             {icon?(
-                <image src={icon} alt={title} className=''/>
+                <image src={icon} alt={title} className='w-6 h-6'/>
             ):(
                 <LuUUtensils />
             )}
