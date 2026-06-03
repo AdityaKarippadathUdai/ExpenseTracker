@@ -28,9 +28,12 @@ const CustomePieChart = ({
                 innerRadius={100}
                 labelLine={false}
             >
-                {data.map((entry,index)=>{
-                    <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-                })}
+                {data.map((entry, index) => (
+                    <Cell
+                        key={`cell-${index}`}
+                        fill={colors[index % colors.length]}
+                    />
+                ))}
             </Pie>
             <Tooltip />
             <Legend />
