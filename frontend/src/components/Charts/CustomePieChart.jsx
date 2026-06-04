@@ -7,6 +7,7 @@ import {
     Legend,
     ResponsiveContainer
 } from 'recharts';
+import CustomTooltip from './CustomTooltip';
 
 const CustomePieChart = ({ data, label, totalAmount, colors, showTextAnchor }) => {
     return (
@@ -29,8 +30,8 @@ const CustomePieChart = ({ data, label, totalAmount, colors, showTextAnchor }) =
                         />
                     ))}
                 </Pie>
-                <Tooltip />
-                <Legend />
+                <Tooltip content={CustomTooltip} />
+                <Legend content={CustomTooltip}/>
                 {showTextAnchor && (
                     <text
                         x="50%"
