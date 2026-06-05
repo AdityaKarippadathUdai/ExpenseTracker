@@ -25,7 +25,7 @@ export const addThousandSeparator=(num)=>{
     return fractionalPart ? `${formattedInteger}.${fractionalPart}` : formattedInteger;
 };
 
-export const prepareExpenseDataForChart=(data=[])=>{
+export const prepareExpenseBarChartData=(data=[])=>{
     const chartData=data.map((item)=>({
         category:item?.category,
         amount:item?.amount,
