@@ -1,0 +1,618 @@
+{
+	"info": {
+		"_postman_id": "52118816-ff7125a7-1b9e-472b-bfa9-3f130cee9d77",
+		"name": "Expense Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"id": "52118816-520f89c8-f9d1-4434-9882-a0591f3d605a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\":\" Aditya K U\",\n    \"email\":\"adityaKU@gmail.com\",\n    \"password\":\"12345678\",\n    \"profileImageUrl\":\"http://localhost:8000/uploads/1778833017823-wolf.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/auth/register",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"id": "52118816-25f8b354-4e1c-485a-932f-3d1f03812a0a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDZjYTdlYzE3Yzg2NDJmNGI0ZTU4NCIsImlhdCI6MTc3ODgzMDY0MywiZXhwIjoxNzc4ODM0MjQzfQ.JfJeVPQiNoOw7IbI-bEI_cS507jOkYhnYXxlGD62lY4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"aditya@gmail.com\",\n    \"password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/auth/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Info",
+					"id": "52118816-9e7bf2cc-af97-47aa-a738-1f60a76cc930",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/v1/auth/getUser",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"getUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Image",
+					"id": "52118816-7f712a5f-d7d5-4edd-958f-6f4668cf28ce",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"uuid": "4d7495dd-3637-4998-8f89-150d2218a6e0",
+									"src": "/home/aditya/Downloads/wolf.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/auth/upload-image",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"upload-image"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "52118816-c8afee88-f8c6-4819-a3a6-b15f2449036d"
+		},
+		{
+			"name": "Income",
+			"item": [
+				{
+					"name": "Add Income",
+					"id": "52118816-d779e56f-d902-4386-9e49-565eaf78477f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"source\": \"Salary\",\n    \"amount\": \"5600\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/Income/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Income",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Income",
+					"id": "52118816-9d29b9d5-1f5a-4c80-a4a8-79b0fcb09609",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"source\": \"Salary\",\n    \"amount\": \"5600\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/Income/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Income",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete income",
+					"id": "52118816-591af3a3-a961-49db-9187-b97b1b251537",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"source\": \"Salary\",\n    \"amount\": \"5600\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/Income/6a0700464e5a58cf020f3457",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Income",
+								"6a0700464e5a58cf020f3457"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download excel",
+					"id": "52118816-7a2dbc28-6500-4f22-b625-f8ec1c3ea683",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"source\": \"Salary\",\n    \"amount\": \"5600\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/Income/downloadexcel",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Income",
+								"downloadexcel"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "52118816-cd729d48-ceff-441b-858b-6e4b0ee774d1"
+		},
+		{
+			"name": "Expense",
+			"item": [
+				{
+					"name": "Add Expense",
+					"id": "52118816-6e4b71ff-72de-44b9-a1a6-9c7075715980",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"category\": \"Rent\",\n    \"amount\": \"300\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/expense/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Expense",
+					"id": "52118816-d60d5662-611d-483e-81c9-c7067a081152",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"source\": \"Salary\",\n    \"amount\": \"5600\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/expense/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense",
+					"id": "52118816-199e7e27-b758-473c-b283-2bd77dff405c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"source\": \"Salary\",\n    \"amount\": \"5600\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/expense/6a0adbfbfee9908a396d8dd4",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"6a0adbfbfee9908a396d8dd4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download excel",
+					"id": "52118816-f5c1fdf5-41fe-4bc1-a52f-a46f084f53b6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"source\": \"Salary\",\n    \"amount\": \"5600\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/expense/downloadexcel",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"downloadexcel"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "52118816-04f51b23-b8ea-4eaf-9f46-904699a9efef"
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Get Dashboard Data",
+					"id": "52118816-524d5004-1730-40c3-906a-e083d2256f57",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"icon\": \" \",\n    \"source\": \"Salary\",\n    \"amount\": \"5600\",\n    \"date\":\"2026-05-15T16:35:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/v1/dashboard",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "52118816-c234b9dd-6d21-4951-b9c1-3ba64e85562a"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c12b56fe-a749-44aa-8b94-50cc57e28a95",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "62fa3d78-f948-475d-9d9b-414e319debef",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": ""
+		},
+		{
+			"key": "accessToken",
+			"value": ""
+		}
+	]
+}
