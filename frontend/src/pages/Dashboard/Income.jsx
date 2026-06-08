@@ -1,9 +1,10 @@
 import React from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout'
 import { useState } from 'react';
+import Modal from '../../components/Modal';
 
 export const Income = () => {
-  const [openAddIncomeTransactionModal, setOpenAddIncomeTransactionModal] = useState(false);
+  const [openAddIncomeModal, setOpenAddIncomeModal] = useState(false);
   const [incomeData, setIncomeData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [openDeleteAlert, setOpenDeleteAlert] = useState({
@@ -51,11 +52,20 @@ export const Income = () => {
     <DashboardLayout activeMenu="income">
       <div className='my-5 mx-auto'>
           <div className='grid grid-cols-1 gap-6'>
+            <div>
             <IncomeOverview
-            transactions={()=>setOpenAddIncomeTransactionModal(true)}
+            transactions={()=>setOpenAddIncomeModal(true)}
             />
-          
+          </div>
         </div>
+
+        <Modal 
+        isOpen={openAddIncomeModal}
+        onClose={()=>setOpenAddIncomeModal(false)}
+        title="Add Income"
+        >
+          <div></div>
+        </Modal>
       </div>
     </DashboardLayout>
   )
