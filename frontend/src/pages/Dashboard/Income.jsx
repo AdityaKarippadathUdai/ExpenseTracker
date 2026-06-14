@@ -2,6 +2,12 @@ import React from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout'
 import { useState } from 'react';
 import Modal from '../../components/Modal';
+import AddIncomeForm from '../../components/Income/AddIncomeForm';
+import toast from 'react-hot-toast'
+import { useState, useEffect } from "react";
+import axiosInstance from '../../utils/axiosInstance';
+import { API_PATHS } from '../../utils/apiPaths';
+import IncomeOverview from "../../components/Income/IncomeOverview";
 
 export const Income = () => {
   const [openAddIncomeModal, setOpenAddIncomeModal] = useState(false);
@@ -34,13 +40,43 @@ export const Income = () => {
   };
 
   //Handle Income
-  const handleAddIncome=async(income)=>{};
+  const handleAddIncome=async(income)=>{
+    const {source,amount,date,icon}=income;
+
+    // Validation
+    if(!source.trim()){
+      toast.error("Source Required");
+      return;
+    }
+    if(!amount || isNaN(amount) || Number(amount)<=0){
+      toast.error("Amount must be a valid number");
+      return;
+    }
+    if(!date){
+      toast.error("Date is required");
+      return;
+    }
+    try{
+      await axiosInstance.post(API_PATHS.INCOME.ADD_INCOME,{
+        source,
+        amount,
+        date,
+        icon,
+      });
+      setOpenAddIncomeModal(false);
+      toast.success("Income added successfully");
+      fetchIncomeDetails();
+    }catch(error){
+      console.log("Error",error.response?.data.message || error.message);
+    }
+
+  };
 
   //Delete Income
   const deleteIncome=async(id)=>{};
 
   // handle download income data
-  const handleDownloadInomeDetails=async()=>{};
+  const handleDownloadIncomeDetails = async () => {};
 
   useEffect(()=>{
     fetchIncomeDetails();
@@ -64,7 +100,7 @@ export const Income = () => {
         onClose={()=>setOpenAddIncomeModal(false)}
         title="Add Income"
         >
-          <div></div>
+          <AddIncomeForm onAddIncome={handleAddIncome}/>
         </Modal>
       </div>
     </DashboardLayout>
