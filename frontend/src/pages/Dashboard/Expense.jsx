@@ -14,7 +14,7 @@ export const Expense = () => {
   });
   const [openAddExpenseModal, setOpenAddExpenseModal] = useState(false);
 
-  // get income details
+  // get Expense details
   const fetchExpenseDetails=async()=>{
     if (loading) return;
     
@@ -34,7 +34,7 @@ export const Expense = () => {
     }
   };
 
-  //Handle Income
+  //Handle Expense
   const handleAddExpense=async(expense)=>{
     const {category,amount,date,icon}=expense;
 
@@ -67,6 +67,10 @@ export const Expense = () => {
 
   };
 
+
+
+
+  
   useEffect(()=>{
     fetchExpenseDetails();
 
