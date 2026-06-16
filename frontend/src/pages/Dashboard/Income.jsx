@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import IncomeOverview from "../../components/Income/IncomeOverview";
+import IncomeList from '../../components/Income/IncomeList';
 
 export const Income = () => {
   const [openAddIncomeModal, setOpenAddIncomeModal] = useState(false);
