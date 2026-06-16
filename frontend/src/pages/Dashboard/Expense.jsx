@@ -68,6 +68,23 @@ export const Expense = () => {
 
   };
 
+  //Delete Expense
+  const deleteExpense=async(id)=>{
+    try{
+      await axiosInstance.delete(API_PATHS.EXPENSE.DELETE_EXPENSE(id));
+      
+      setOpenDeleteAlert({show:false,data:null});
+      toast.success("Expense details declared successfully");
+      fetchExpenseDetails();
+    }catch(error){
+      console.error(
+        "error.responnse?.data?.message" || error.message
+      );
+    }
+  };
+
+  // handle download Expense data
+  const handleDownloadExpenseDetails = async () => {};
 
 
 
