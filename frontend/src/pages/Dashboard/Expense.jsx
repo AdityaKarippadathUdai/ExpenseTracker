@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import React, { useEffect } from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout'
 import { API_PATHS } from '../../utils/apiPaths';
