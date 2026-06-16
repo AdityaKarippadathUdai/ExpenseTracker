@@ -10,8 +10,11 @@ import { API_PATHS } from '../../utils/apiPaths';
 import IncomeOverview from "../../components/Income/IncomeOverview";
 import IncomeList from '../../components/Income/IncomeList';
 import DeleteAlert from '../../components/DeleteAlert';
+import { useUserAuth } from '../../hooks/useUserAuth';
 
 export const Income = () => {
+  useUserAuth();
+
   const [openAddIncomeModal, setOpenAddIncomeModal] = useState(false);
   const [incomeData, setIncomeData] = useState([]);
   const [loading, setLoading] = useState(false);
