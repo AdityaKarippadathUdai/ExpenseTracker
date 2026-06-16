@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import React from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout'
 import { useState } from 'react';
 import Modal from '../../components/Modal';
 import AddIncomeForm from '../../components/Income/AddIncomeForm';
 import toast from 'react-hot-toast'
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import IncomeOverview from "../../components/Income/IncomeOverview";
@@ -87,7 +88,7 @@ export const Income = () => {
       fetchIncomeDetails();
     }catch(error){
       console.error(
-        "error.responnse?.data?.message" || error.message
+        "Error",error.responnse?.data?.message || error.message
       );
     }
   };
