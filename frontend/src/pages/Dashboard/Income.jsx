@@ -93,7 +93,29 @@ export const Income = () => {
   };
 
   // handle download income data
-  const handleDownloadIncomeDetails = async () => {};
+  const handleDownloadIncomeDetails = async () => {
+
+    try{
+      const response=await axiosInstance.get(
+        API_PATHS.INCOME.DOWNLOAD_INCOME,
+        {
+          responseType:"blob"
+        }
+      );
+      const url=window.URL.createObjectURL(new Blob([response.data]));
+      const link=document.createElement('a');
+
+      link.href=url;
+      link.setAttribute("download","income_details.xlsx");
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    }catch(error){
+      console.error("Error downloading income details",error);
+      toast.erro("Failed to download income details please try again later");
+    }
+  };
 
   useEffect(()=>{
     fetchIncomeDetails();
@@ -127,7 +149,7 @@ export const Income = () => {
         title="Add Income"
         >
           <AddIncomeForm onAddIncome={handleAddIncome}/>
-          
+
         </Modal>
 
           <Modal
