@@ -38,7 +38,7 @@ export const App = () => {
 
       <Toaster
       toastOptions={{
-        className=''
+        className:'',
         style:{
           fontSize:'13px'
         },
