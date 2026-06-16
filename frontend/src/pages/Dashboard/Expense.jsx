@@ -5,6 +5,8 @@ import AddExpenseForm from '../../components/Expense/AddExpenseForm';
 import axiosInstance from '../../utils/axiosInstance';
 import DeleteAlert from '../../components/DeleteAlert';
 import { useUserAuth } from '../../hooks/useUserAuth';
+import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 export const Expense = () => {
   useUserAuth();
@@ -80,7 +82,7 @@ export const Expense = () => {
       fetchExpenseDetails();
     }catch(error){
       console.error(
-        "error.responnse?.data?.message" || error.message
+        "Error",error.responnse?.data?.message || error.message
       );
     }
   };
