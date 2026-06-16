@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout'
 import { API_PATHS } from '../../utils/apiPaths';
 import AddExpenseForm from '../../components/Expense/AddExpenseForm';
+import axiosInstance from '../../utils/axiosInstance';
 
 export const Expense = () => {
   useUserAuth();
