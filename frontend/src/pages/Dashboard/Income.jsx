@@ -127,6 +127,7 @@ export const Income = () => {
         title="Add Income"
         >
           <AddIncomeForm onAddIncome={handleAddIncome}/>
+          
         </Modal>
 
           <Modal

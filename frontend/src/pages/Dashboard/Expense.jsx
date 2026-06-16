@@ -3,6 +3,8 @@ import DashboardLayout from '../../components/layouts/DashboardLayout'
 import { API_PATHS } from '../../utils/apiPaths';
 import AddExpenseForm from '../../components/Expense/AddExpenseForm';
 import axiosInstance from '../../utils/axiosInstance';
+import DeleteAlert from '../../components/DeleteAlert';
+import { useUserAuth } from '../../hooks/useUserAuth';
 
 export const Expense = () => {
   useUserAuth();
@@ -124,6 +126,19 @@ export const Expense = () => {
           <AddExpenseForm onAddExpense={handleAddExpense} />
           
         </Modal>
+
+          <Modal
+          isOpen={openDeleteAlert.show}
+          onClose={()=>setOpenDeleteAlert({show:false,data:null})}
+          title="Delete Expense"
+          >
+            <DeleteAlert
+            content="Are you sure you want to delete this Expense"
+            onDelete={()=>deleteExpense(openDeleteAlert.data)}
+            />
+
+          </Modal>
+
       </div>
     </DashboardLayout>
   )
