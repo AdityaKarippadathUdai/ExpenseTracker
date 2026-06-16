@@ -84,6 +84,14 @@ export const Expense = () => {
             onExpenseIncome={()=>setOpenAddExpenseModal(true)}
             />
           </div>
+
+          <ExpenseList 
+          transactions={expenseData}
+          onDelete={(id)=>{
+            setOpenDeleteAlert({show:true,data:id});
+          }}
+          onDownload={handleDownloadExpenseDetails}
+          />
         </div>
 
         <Modal 
