@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import React from 'react'
 import {LuPlus} from 'react-icons/lu';
 import CustomBarChart from '../Charts/CustomBarChart';
 import { useEffect } from 'react';
 import { prepareIncomeBarChartData } from '../../utils/helper';
+import { useState } from 'react';
 
 const IncomeOverview = ({transactions,onAddIncome}) => {
     const [chartData,setChartData] = useState([]);
