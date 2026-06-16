@@ -75,7 +75,19 @@ export const Income = () => {
   };
 
   //Delete Income
-  const deleteIncome=async(id)=>{};
+  const deleteIncome=async(id)=>{
+    try{
+      await axiosInstance.delete(API_PATHS.INCOME.DELETE_INCOME(id));
+      
+      setOpenDeleteAlert({show:false,data:null});
+      toast.success("Income details declared successfully");
+      fetchIncomeDetails();
+    }catch(error){
+      console.error(
+        "error.responnse?.data?.message" || error.message
+      );
+    }
+  };
 
   // handle download income data
   const handleDownloadIncomeDetails = async () => {};
