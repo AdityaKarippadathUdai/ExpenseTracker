@@ -9,18 +9,18 @@ exports.getDashboardData = async (req, res) => {
 
         // Total income and expense
         const totalIncome = await Income.aggregate([
-            { $match: { user: userObjectId } },
+            { $match: { userId: userObjectId } },
             { $group: { _id: null, total: { $sum: "$amount" } } }
         ]);
 
         const totalExpense = await Expense.aggregate([
-            { $match: { user: userObjectId } },
+            { $match: { userId: userObjectId } },
             { $group: { _id: null, total: { $sum: "$amount" } } }
         ]);
 
         // Income transactions in last 60 days
         const last60DaysIncomeTransactions = await Income.find({
-            user: userObjectId,                                         // ✅ fixed
+            userId: userObjectId,                                         // ✅ fixed
             date: { $gte: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000) },
         }).sort({ date: -1 });
 
@@ -30,7 +30,7 @@ exports.getDashboardData = async (req, res) => {
 
         // Expense transactions in last 30 days
         const last30DaysExpenseTransactions = await Expense.find({
-            user: userObjectId,                                         // ✅ fixed
+            userId: userObjectId,                                         // ✅ fixed
             date: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
         }).sort({ date: -1 });
 
@@ -40,11 +40,11 @@ exports.getDashboardData = async (req, res) => {
 
         // Recent 5 transactions (income + expense combined)
         const lastTransactions = [
-            ...(await Income.find({ user: userObjectId })               // ✅ fixed
+            ...(await Income.find({ userId: userObjectId })               // ✅ fixed
                 .sort({ date: -1 }).limit(5))
                 .map((txn) => ({ ...txn.toObject(), type: "income" })),
 
-            ...(await Expense.find({ user: userObjectId })              // ✅ fixed
+            ...(await Expense.find({ userId: userObjectId })              // ✅ fixed
                 .sort({ date: -1 }).limit(5))
                 .map((txn) => ({ ...txn.toObject(), type: "expense" })),
         ]
