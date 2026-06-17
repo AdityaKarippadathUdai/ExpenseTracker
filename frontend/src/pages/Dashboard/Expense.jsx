@@ -8,6 +8,9 @@ import DeleteAlert from '../../components/DeleteAlert';
 import { useUserAuth } from '../../hooks/useUserAuth';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
+import ExpenseOverview from "../../components/Expense/ExpenseOverview";
+import ExpenseList from "../../components/Expense/ExpenseList";
+import Modal from "../../components/Modal";
 
 export const Expense = () => {
   useUserAuth();
