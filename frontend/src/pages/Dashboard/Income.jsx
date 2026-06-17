@@ -130,7 +130,8 @@ export const Income = () => {
           <div className='grid grid-cols-1 gap-6'>
             <div>
             <IncomeOverview
-            transactions={()=>setOpenAddIncomeModal(true)}
+            transactions={incomeData}
+            onAddIncome={()=>setOpenAddIncomeModal(true)}
             />
           </div>
 
