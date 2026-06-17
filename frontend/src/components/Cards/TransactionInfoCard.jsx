@@ -29,7 +29,7 @@ const TransactionInfoCard = ({
                 <LuUUtensils />
             )}
         </div>
-        <div clasName='flex-1 flex items-center justify-between'>
+        <div className='flex-1 flex items-center justify-between'>
             <div>
                 <p className='text-sm text-gray-700 font-medium'>{title}</p>
                 <p className='text-xs text-gray-500 mt-1'>{date}</p>
