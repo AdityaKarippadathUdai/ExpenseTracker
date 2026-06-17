@@ -62,13 +62,27 @@ exports.getAllIncome = async (req, res) => {
 
 // Delete Income Source
 exports.deleteIncome = async (req, res) => {
-    try{
-        await Income.findOneAndDelete(req.params.id);
-        res.json({ message: 'Income source deleted successfully' });
-        
-    }catch(error){
+    const userId = req.user.id;
+
+    try {
+        const income = await Income.findOneAndDelete({
+            _id: req.params.id,
+            userId
+        });
+
+        if (!income) {
+            return res.status(404).json({
+                message: "Income source not found"
+            });
+        }
+
+        res.json({
+            message: "Income source deleted successfully"
+        });
+
+    } catch (error) {
         res.status(500).json({
-            message: 'Server error'
+            message: "Server error"
         });
     }
 };
