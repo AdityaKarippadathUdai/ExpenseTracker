@@ -26,12 +26,21 @@ const AddIncomeForm = ({onAddIncome}) => {
         placeholder="Free lance Salary ect"
         type="text"
         />
+
         <Input
-        value={income.data}
+        value={income.amount}
+        onChange={({target})=>handleChange("amount",target.value)}
+        label="Amount"
+        placeholder="Amount of Money"
+        type="number"
+        />
+
+        <Input
+        value={income.date}
         onChange={({target})=>handleChange("date",target.value)}
         label="Date"
-        placeholder=""
-        type=""
+        placeholder="Date"
+        type="date"
         />
 
         <div className='flex justify-end mt-6'>
