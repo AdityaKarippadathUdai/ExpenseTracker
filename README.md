@@ -12,8 +12,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
 
 </div>
 
@@ -94,12 +93,19 @@ A full-stack expense tracker that helps users manage personal finances — track
 | MongoDB Atlas / Local MongoDB | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) | Data persistence |
 | Postman | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white) | API testing & documentation |
 
+### DevOps & Containerization
+| Technology | Badge | Purpose |
+|---|---|---|
+| Docker | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) | Containerizes the backend and frontend |
+| Docker Compose | ![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white) | Orchestrates both services for local dev |
+
 ---
 
 ## 🏗️ Project Structure
 
 ```text
 ExpenseTracker/
+├── docker-compose.yml
 ├── backend/
 │   ├── config/
 │   │   └── db.js                      # MongoDB connection setup
@@ -121,6 +127,7 @@ ExpenseTracker/
 │   │   ├── expenseRoutes.js
 │   │   └── incomeRoutes.js
 │   ├── uploads/                       # Stores uploaded profile photos
+│   ├── Dockerfile
 │   ├── package.json
 │   └── server.js
 │
@@ -192,6 +199,7 @@ ExpenseTracker/
 │   │   ├── App.jsx
 │   │   ├── index.css
 │   │   └── main.jsx
+│   ├── Dockerfile
 │   ├── package.json
 │   └── vite.config.js
 │
@@ -319,12 +327,70 @@ cd frontend
 npm install
 ```
 
-
 Run the frontend:
 ```bash
 npm run dev
 ```
 Runs on `http://localhost:5173`
+
+---
+
+## 🐳 Running with Docker
+
+As an alternative to running the backend and frontend separately, the repo includes a `docker-compose.yml` at the root that builds and runs both services together.
+
+**Prerequisites:** Docker and Docker Compose installed.
+
+**1. Make sure your environment files are in place**
+- `backend/.env` must exist — it's loaded into the backend container via `env_file`, so the same variables from the manual setup above (`PORT`, `MONGO_URI`, `JWT_SECRET`, `CLIENT_URL`) apply here too.
+- If `MONGO_URI` points to **MongoDB running locally on your machine** rather than MongoDB Atlas, use `host.docker.internal` instead of `localhost` in the connection string — e.g. `mongodb://host.docker.internal:27017/expense-tracker`. Inside a container, `localhost` refers to the container itself, not your machine. This is exactly why the backend service defines `extra_hosts: host.docker.internal:host-gateway`, which maps that hostname to your host machine's network.
+- The frontend service has no `env_file` entry in compose, so if your frontend depends on `frontend/.env` (e.g. `VITE_API_URL`), make sure it exists on disk before building — compose won't inject it for you.
+
+**2. Build and start both containers**
+```bash
+docker compose up --build
+```
+
+**3. Access the app**
+| Service | Container | URL |
+|---|---|---|
+| Backend | `expense-backend` | http://localhost:8000 |
+| Frontend | `expense-frontend` | http://localhost:5173 |
+
+The frontend container waits for the backend to start first (`depends_on`).
+
+**4. Stop the containers**
+```bash
+docker compose down
+```
+
+<details>
+<summary><code>docker-compose.yml</code></summary>
+
+```yaml
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: expense-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: expense-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+```
+
+</details>
 
 ---
 
