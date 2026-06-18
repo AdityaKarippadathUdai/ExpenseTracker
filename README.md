@@ -439,7 +439,4 @@ Contributions are welcome.
 
 If this project was useful to you, consider showing some support:
 
-![Star this repo](https://img.shields.io/github/stars/AdityaKarippadathUdai/ExpenseTracker?style=flat-square&color=BB9AF7&label=⭐%20Star)
-![Fork this repo](https://img.shields.io/github/forks/AdityaKarippadathUdai/ExpenseTracker?style=flat-square&color=BB9AF7&label=🍴%20Fork)
-
 ⭐ Star the repository · 🍴 Fork it · 📢 Share it with others
