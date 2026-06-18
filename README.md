@@ -1,271 +1,257 @@
+<div align="center">
+
 # 💰 Expense Tracker
 
-A modern full-stack Expense Tracker application built with the MERN Stack that helps users manage their personal finances efficiently. Users can track income and expenses, visualize spending patterns through interactive charts, monitor financial health, and maintain a complete transaction history with secure authentication.
+### A modern full-stack personal finance manager built on the MERN stack
+
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)](https://expressjs.com/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+
+
+</div>
+
+A full-stack expense tracker that helps users manage personal finances — track income and expenses, visualize spending patterns through interactive charts, monitor financial health, and maintain a complete transaction history behind secure JWT authentication.
 
 ---
 
 ## 🚀 Features
 
 ### 🔐 Authentication & User Management
-
-* User Registration and Login
-* JWT-based Authentication
-* Protected Routes
-* User Profile Management
-* Profile Photo Upload
-* Persistent Login Sessions
-* Secure Password Storage
+- User registration and login
+- JWT-based authentication
+- Protected routes
+- Profile management with photo upload
+- Persistent login sessions
+- Secure password hashing
 
 ### 💵 Income Management
-
-* Add Income Records
-* View Income History
-* Delete Income Entries
-* Categorize Income Sources
-* Income Analytics
-* Recent Income Tracking
+- Add, view, and delete income records
+- Categorize income sources
+- Income analytics and recent income tracking
 
 ### 💸 Expense Management
-
-* Add Expense Records
-* View Expense History
-* Delete Expense Entries
-* Expense Categorization
-* Expense Analytics
-* Last 30 Days Expense Summary
+- Add, view, and delete expense records
+- Categorize expenses
+- Expense analytics and last-30-days summary
 
 ### 📊 Dashboard & Analytics
-
-* Financial Overview Dashboard
-* Income vs Expense Comparison
-* Interactive Pie Charts
-* Interactive Bar Charts
-* Interactive Line Charts
-* Recent Transactions Overview
-* Financial Insights
+- Financial overview dashboard
+- Income vs. expense comparison
+- Interactive pie, bar, and line charts
+- Recent transactions overview
 
 ### 📈 Data Visualization
-
-* Income Distribution Charts
-* Expense Breakdown Charts
-* Transaction Trend Analysis
-* Monthly Financial Reports
-* Custom Tooltips & Legends
+- Income distribution and expense breakdown charts
+- Transaction trend analysis
+- Custom tooltips and legends
 
 ### 📱 Modern User Experience
-
-* Responsive Design
-* Clean Dashboard Layout
-* Interactive Components
-* Modal-Based Forms
-* Emoji Picker Support
-* Smooth Navigation
-* Modern UI Design
+- Fully responsive design
+- Modal-based forms
+- Emoji picker support
+- Clean, modern UI
 
 ---
 
-## 🏗️ Project Architecture
+## 🛠️ Tech Stack
+
+### Frontend
+| Technology | Badge | Purpose |
+|---|---|---|
+| React.js | ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) | Component-based UI library |
+| Vite | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) | Dev server & build tool |
+| React Router DOM | ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white) | Client-side routing |
+| Axios | ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white) | Promise-based HTTP client |
+| Context API | ![Context API](https://img.shields.io/badge/Context_API-BB9AF7?style=flat-square) | Global state management |
+| Recharts | ![Recharts](https://img.shields.io/badge/Recharts-BB9AF7?style=flat-square) | Composable charting library |
+| React Icons | ![React Icons](https://img.shields.io/badge/React_Icons-BB9AF7?style=flat-square) | Icon library |
+| Tailwind CSS | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) | Utility-first styling |
+| JavaScript (ES6+) | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Core language |
+
+### Backend
+| Technology | Badge | Purpose |
+|---|---|---|
+| Node.js | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white) | JavaScript runtime |
+| Express.js | ![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white) | Web application framework |
+| MongoDB | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) | NoSQL document database |
+| Mongoose | ![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=flat-square&logo=mongoose&logoColor=white) | MongoDB object modeling |
+| JWT | ![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white) | Stateless authentication |
+| Multer | ![Multer](https://img.shields.io/badge/Multer-BB9AF7?style=flat-square) | Multipart / file uploads |
+| bcryptjs | ![bcryptjs](https://img.shields.io/badge/bcryptjs-BB9AF7?style=flat-square) | Password hashing |
+| CORS | ![CORS](https://img.shields.io/badge/CORS-BB9AF7?style=flat-square) | Cross-origin resource sharing |
+| dotenv | ![dotenv](https://img.shields.io/badge/dotenv-ECD53F?style=flat-square&logo=dotenv&logoColor=black) | Environment variable management |
+
+### Database & Tooling
+| Technology | Badge | Purpose |
+|---|---|---|
+| MongoDB Atlas / Local MongoDB | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) | Data persistence |
+| Postman | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white) | API testing & documentation |
+
+---
+
+## 🏗️ Project Structure
 
 ```text
 ExpenseTracker/
-│
 ├── backend/
 │   ├── config/
+│   │   └── db.js                      # MongoDB connection setup
 │   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── dashboardController.js
+│   │   ├── expenseController.js
+│   │   └── incomeController.js
 │   ├── middleware/
+│   │   ├── authMiddleware.js          # JWT route protection
+│   │   └── uploadMiddleware.js        # Multer config
 │   ├── models/
+│   │   ├── Expense.js
+│   │   ├── Income.js
+│   │   └── User.js
 │   ├── routes/
-│   ├── uploads/
+│   │   ├── authRoutes.js
+│   │   ├── dashboardRoutes.js
+│   │   ├── expenseRoutes.js
+│   │   └── incomeRoutes.js
+│   ├── uploads/                       # Stores uploaded profile photos
+│   ├── package.json
 │   └── server.js
 │
 ├── frontend/
+│   ├── public/
+│   │   ├── favicon.svg
+│   │   └── icons.svg
 │   ├── src/
+│   │   ├── assets/
+│   │   │   ├── hero.png
+│   │   │   ├── images/
+│   │   │   ├── react.svg
+│   │   │   └── vite.svg
 │   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
+│   │   │   ├── Cards/
+│   │   │   │   ├── CharAvatar.jsx
+│   │   │   │   ├── InfoCard.jsx
+│   │   │   │   └── TransactionInfoCard.jsx
+│   │   │   ├── Charts/
+│   │   │   │   ├── CustomBarChart.jsx
+│   │   │   │   ├── CustomePieChart.jsx
+│   │   │   │   ├── CustomLegend.jsx
+│   │   │   │   ├── CustomLineChart.jsx
+│   │   │   │   └── CustomTooltip.jsx
+│   │   │   ├── Dashboard/
+│   │   │   │   ├── ExpenseTransactions.jsx
+│   │   │   │   ├── FinanceOverview.jsx
+│   │   │   │   ├── Last30DaysExpenses.jsx
+│   │   │   │   ├── RecentIncome.jsx
+│   │   │   │   ├── RecentIncomeWithChart.jsx
+│   │   │   │   └── RecentTransactions.jsx
+│   │   │   ├── Expense/
+│   │   │   │   ├── AddExpenseForm.jsx
+│   │   │   │   ├── ExpenseList.jsx
+│   │   │   │   └── ExpenseOverview.jsx
+│   │   │   ├── Income/
+│   │   │   │   ├── AddIncomeForm.jsx
+│   │   │   │   ├── IncomeList.jsx
+│   │   │   │   └── IncomeOverview.jsx
+│   │   │   ├── Inputs/
+│   │   │   │   ├── Input.jsx
+│   │   │   │   └── ProfilePhotoSelector.jsx
+│   │   │   ├── layouts/
+│   │   │   │   ├── AuthLayout.jsx
+│   │   │   │   ├── DashboardLayout.jsx
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   └── SideMenu.jsx
+│   │   │   ├── DeleteAlert.jsx
+│   │   │   ├── EmojiPickerPopup.jsx
+│   │   │   └── Modal.jsx
 │   │   ├── context/
+│   │   │   └── userContext.jsx
+│   │   ├── hooks/
+│   │   │   └── useUserAuth.jsx
+│   │   ├── pages/
+│   │   │   ├── Auth/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   └── SignUp.jsx
+│   │   │   └── Dashboard/
+│   │   │       ├── Expense.jsx
+│   │   │       ├── Home.jsx
+│   │   │       └── Income.jsx
 │   │   ├── utils/
-│   │   └── assets/
+│   │   │   ├── apiPaths.js
+│   │   │   ├── axiosInstance.js
+│   │   │   ├── data.js
+│   │   │   ├── helper.js
+│   │   │   └── uploadImage.js
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── package.json
 │   └── vite.config.js
 │
 └── postman/
+    └── collections/
+        └── 52118816-ff7125a7-1b9e-472b-bfa9-3f130cee9d77.json
 ```
 
 ---
 
-# 🛠️ Tech Stack
+## 📂 Backend Structure
 
-## Frontend
+**Config** — `db.js` establishes the MongoDB connection.
 
-* React.js
-* Vite
-* React Router DOM
-* Axios
-* Context API
-* Recharts
-* React Icons
-* Tailwind CSS
-* JavaScript (ES6+)
+**Controllers**
+- `authController.js` — registration, login, profile retrieval
+- `incomeController.js` — add / fetch / delete income, income stats
+- `expenseController.js` — add / fetch / delete expenses, expense stats
+- `dashboardController.js` — aggregated financial summaries and insights
 
-## Backend
+**Middleware**
+- `authMiddleware.js` — verifies JWTs and protects routes
+- `uploadMiddleware.js` — handles profile image uploads via Multer
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
-* Multer
-* bcryptjs
-* CORS
-* dotenv
+**Models**
+- `User.js` — user info, auth details, profile photo
+- `Income.js` — source, amount, date, user reference
+- `Expense.js` — category, amount, date, user reference
 
-## Database
-
-* MongoDB Atlas / Local MongoDB
-
-## API Testing
-
-* Postman
+**Routes**
+- `authRoutes.js`, `incomeRoutes.js`, `expenseRoutes.js`, `dashboardRoutes.js` — map each controller's endpoints to the Express app
 
 ---
 
-# 📂 Backend Structure
+## 🎨 Frontend Structure
 
-## Config
+**Pages**
+- `Auth/Login.jsx`, `Auth/SignUp.jsx`
+- `Dashboard/Home.jsx`, `Dashboard/Income.jsx`, `Dashboard/Expense.jsx`
 
-### db.js
+**Components**
+- `Cards/` — `CharAvatar`, `InfoCard`, `TransactionInfoCard`
+- `Charts/` — `CustomBarChart`, `CustomePieChart`, `CustomLineChart`, `CustomLegend`, `CustomTooltip`
+- `Dashboard/` — `FinanceOverview`, `RecentTransactions`, `RecentIncome`, `RecentIncomeWithChart`, `ExpenseTransactions`, `Last30DaysExpenses`
+- `Income/` — `AddIncomeForm`, `IncomeList`, `IncomeOverview`
+- `Expense/` — `AddExpenseForm`, `ExpenseList`, `ExpenseOverview`
+- `Inputs/` — `Input`, `ProfilePhotoSelector`
+- `layouts/` — `AuthLayout`, `DashboardLayout`, `Navbar`, `SideMenu`
+- Top-level: `Modal.jsx`, `DeleteAlert.jsx`, `EmojiPickerPopup.jsx`
 
-Responsible for establishing MongoDB database connection.
-
-## Controllers
-
-### authController.js
-
-Handles:
-
-* User Registration
-* User Login
-* User Profile Retrieval
-* Authentication Logic
-
-### incomeController.js
-
-Handles:
-
-* Add Income
-* Fetch Income
-* Delete Income
-* Income Statistics
-
-### expenseController.js
-
-Handles:
-
-* Add Expense
-* Fetch Expenses
-* Delete Expenses
-* Expense Statistics
-
-### dashboardController.js
-
-Handles:
-
-* Dashboard Analytics
-* Financial Summaries
-* Transaction Insights
-
-## Middleware
-
-### authMiddleware.js
-
-Protects routes using JWT verification.
-
-### uploadMiddleware.js
-
-Handles profile image uploads using Multer.
-
-## Models
-
-### User.js
-
-Stores:
-
-* User Information
-* Authentication Details
-* Profile Photo
-
-### Income.js
-
-Stores:
-
-* Income Source
-* Amount
-* Date
-* User Reference
-
-### Expense.js
-
-Stores:
-
-* Expense Details
-* Amount
-* Category
-* Date
-* User Reference
+**Context, Hooks & Utils**
+- `context/userContext.jsx` — global auth/user state
+- `hooks/useUserAuth.jsx` — auth-aware hook for protected pages
+- `utils/` — `apiPaths.js`, `axiosInstance.js`, `data.js`, `helper.js`, `uploadImage.js`
 
 ---
 
-# 🎨 Frontend Structure
+## 🗄️ Database Schema
 
-## Pages
-
-### Authentication
-
-* Login Page
-* Signup Page
-
-### Dashboard
-
-* Home Dashboard
-* Income Page
-* Expense Page
-
-## Components
-
-### Dashboard Components
-
-* Finance Overview
-* Recent Transactions
-* Recent Income
-* Expense Transactions
-* Last 30 Days Expenses
-
-### Chart Components
-
-* Pie Charts
-* Bar Charts
-* Line Charts
-* Custom Tooltips
-* Custom Legends
-
-### Income Components
-
-* Add Income Form
-* Income List
-* Income Overview
-
-### Expense Components
-
-* Add Expense Form
-* Expense List
-* Expense Overview
-
----
-
-# 🗄️ Database Schema
-
-## User Schema
-
+**User**
 ```javascript
 {
   fullName: String,
@@ -275,8 +261,7 @@ Stores:
 }
 ```
 
-## Income Schema
-
+**Income**
 ```javascript
 {
   userId: ObjectId,
@@ -287,8 +272,7 @@ Stores:
 }
 ```
 
-## Expense Schema
-
+**Expense**
 ```javascript
 {
   userId: ObjectId,
@@ -301,287 +285,161 @@ Stores:
 
 ---
 
-# ⚙️ Installation & Setup
+## ⚙️ Installation & Setup
 
-## 1. Clone Repository
-
+### 1. Clone the repository
 ```bash
 git clone https://github.com/AdityaKarippadathUdai/ExpenseTracker
-
 cd ExpenseTracker
 ```
 
----
-
-## 2. Backend Setup
-
-Navigate to backend folder:
-
+### 2. Backend setup
 ```bash
 cd backend
-```
-
-Install dependencies:
-
-```bash
 npm install
 ```
 
-Create `.env`
-
+Create a `.env` file:
 ```env
 PORT=8000
-
 MONGO_URI=your_mongodb_connection_string
-
 JWT_SECRET=your_secret_key
-
 CLIENT_URL=http://localhost:5173
 ```
 
-Start Backend:
-
+Start the backend:
 ```bash
 npm run dev
 ```
+Runs on `http://localhost:8000`
 
-Backend runs on:
-
-```text
-http://localhost:8000
-```
-
----
-
-## 3. Frontend Setup
-
-Navigate to frontend folder:
-
+### 3. Frontend setup
 ```bash
 cd frontend
-```
-
-Install dependencies:
-
-```bash
 npm install
 ```
 
-Create `.env`
 
-```env
-VITE_API_URL=http://localhost:8000
-```
-
-Run frontend:
-
+Run the frontend:
 ```bash
 npm run dev
 ```
+Runs on `http://localhost:5173`
 
-Frontend runs on:
+---
 
+## 🔑 API Endpoints
+
+### Authentication
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | Log in a user |
+| GET | `/api/auth/profile` | Get the current user's profile |
+
+### Income
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/income/add` | Add an income record |
+| GET | `/api/income` | Get all income records |
+| DELETE | `/api/income/:id` | Delete an income record |
+
+### Expenses
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/expense/add` | Add an expense record |
+| GET | `/api/expense` | Get all expense records |
+| DELETE | `/api/expense/:id` | Delete an expense record |
+
+### Dashboard
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/dashboard` | Get aggregated dashboard analytics |
+
+---
+
+## 📊 Key Metrics Displayed
+- Total income, total expenses, net balance
+- Recent transactions
+- Income and expense trends
+- Spending categories
+- Monthly financial activity
+
+---
+
+## 🔒 Security Features
+- JWT authentication
+- Password hashing with bcrypt
+- Protected API routes via middleware
+- Input validation
+- Environment variables for secrets
+- CORS configuration
+
+---
+
+## 🧪 Testing
+
+A Postman collection is included at:
 ```text
-http://localhost:5173
+postman/collections/52118816-ff7125a7-1b9e-472b-bfa9-3f130cee9d77.json
 ```
+Import it into Postman to test the Authentication, Income, Expense, and Dashboard APIs end to end. Consider renaming it to something like `ExpenseTracker.postman_collection.json` for clarity if you re-export it later.
 
 ---
 
-# 🔑 API Endpoints
-
-## Authentication
-
-```http
-POST /api/auth/register
-```
-
-Register User
-
-```http
-POST /api/auth/login
-```
-
-Login User
-
-```http
-GET /api/auth/profile
-```
-
-Get User Profile
+## 🚀 Future Enhancements
+- Budget planning
+- Recurring transactions
+- Email notifications
+- Export to PDF / Excel
+- Multi-currency support
+- Dark mode
+- Mobile app version
+- AI-powered spending insights
+- Financial goal tracking
 
 ---
 
-## Income
-
-```http
-POST /api/income/add
-```
-
-Add Income
-
-```http
-GET /api/income
-```
-
-Get All Income
-
-```http
-DELETE /api/income/:id
-```
-
-Delete Income
-
----
-
-## Expenses
-
-```http
-POST /api/expense/add
-```
-
-Add Expense
-
-```http
-GET /api/expense
-```
-
-Get All Expenses
-
-```http
-DELETE /api/expense/:id
-```
-
-Delete Expense
-
----
-
-## Dashboard
-
-```http
-GET /api/dashboard
-```
-
-Dashboard Analytics
-
----
-
-# 📊 Key Metrics Displayed
-
-* Total Income
-* Total Expenses
-* Net Balance
-* Recent Transactions
-* Income Trends
-* Expense Trends
-* Spending Categories
-* Monthly Financial Activity
-
----
-
-# 🔒 Security Features
-
-* JWT Authentication
-* Password Hashing with bcrypt
-* Protected API Routes
-* Input Validation
-* Secure Environment Variables
-* Authentication Middleware
-
----
-
-# 🧪 Testing
-
-Import the Postman Collection:
-
-```text
-postman/collections/
-```
-
-Test:
-
-* Authentication APIs
-* Income APIs
-* Expense APIs
-* Dashboard APIs
-
----
-
-# 🚀 Future Enhancements
-
-* Budget Planning
-* Expense Categories Management
-* Recurring Transactions
-* Email Notifications
-* Export to PDF
-* Export to Excel
-* Multi-Currency Support
-* Dark Mode
-* Mobile App Version
-* AI-Powered Spending Insights
-* Financial Goal Tracking
-
----
-
-# 📸 Screenshots
-
-Add screenshots of:
-
-1. Login Page
-2. Signup Page
-3. Dashboard
-4. Income Management
-5. Expense Management
-6. Analytics Dashboard
-
----
-
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome.
 
 1. Fork the repository
 2. Create a feature branch
-
-```bash
-git checkout -b feature/new-feature
-```
-
-3. Commit changes
-
-```bash
-git commit -m "Added new feature"
-```
-
-4. Push changes
-
-```bash
-git push origin feature/new-feature
-```
-
+   ```bash
+   git checkout -b feature/new-feature
+   ```
+3. Commit your changes
+   ```bash
+   git commit -m "Added new feature"
+   ```
+4. Push the branch
+   ```bash
+   git push origin feature/new-feature
+   ```
 5. Open a Pull Request
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
+
+<div align="center">
 
 **Aditya K U**
+ Full Stack Developer · Machine Learning Enthusiast
 
-* B.Tech CSE (AI)
-* Full Stack Developer
-* Machine Learning Enthusiast
+[![GitHub](https://img.shields.io/badge/GitHub-AdityaKarippadathUdai-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/AdityaKarippadathUdai)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aditya%20Udai-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/aditya-udai-a580a232a/)
 
-GitHub: https://github.com/AdityaKarippadathUdai
-
-LinkedIn: Add your LinkedIn profile here
+</div>
 
 ---
 
-# ⭐ Support
+## ⭐ Support
 
-If you found this project useful, please consider giving it a star on GitHub.
+If this project was useful to you, consider showing some support:
 
-```text
-⭐ Star the repository
-🍴 Fork the repository
-📢 Share with others
-```
+![Star this repo](https://img.shields.io/github/stars/AdityaKarippadathUdai/ExpenseTracker?style=flat-square&color=BB9AF7&label=⭐%20Star)
+![Fork this repo](https://img.shields.io/github/forks/AdityaKarippadathUdai/ExpenseTracker?style=flat-square&color=BB9AF7&label=🍴%20Fork)
+
+⭐ Star the repository · 🍴 Fork it · 📢 Share it with others
